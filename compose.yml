@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:4.0.21
+    platform: linux/amd64
+    container_name: mongodb
+    hostname: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=stats
+      - MONGO_INITDB_ROOT_PASSWORD=stats
+      - MONGO_INITDB_DATABASE=stats
+#      - MONGODB_USER=stats
+#      - MONGODB_PASS=stats
+#      - MONGODB_DATABASE=stats
+      - SERVICE_TAGS=dev
+      - SERVICE_NAME=mongo
+    ports:
+      - 27017:27017
+      - 27018:27018
+      - 27019:27019
+    volumes:
+      - ./mongodb/data/db:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
