@@ -10,9 +10,9 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=stats
       - MONGO_INITDB_ROOT_PASSWORD=stats
       - MONGO_INITDB_DATABASE=stats
-#      - MONGODB_USER=stats
-#      - MONGODB_PASS=stats
-#      - MONGODB_DATABASE=stats
+      #      - MONGODB_USER=stats
+      #      - MONGODB_PASS=stats
+      #      - MONGODB_DATABASE=stats
       - SERVICE_TAGS=dev
       - SERVICE_NAME=mongo
     ports:

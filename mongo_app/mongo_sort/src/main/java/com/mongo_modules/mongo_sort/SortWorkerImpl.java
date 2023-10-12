@@ -1,5 +1,7 @@
 package com.mongo_modules.mongo_sort;
 
+import com.mongo_modules.mongo_sort.ent.Voice;
+import com.mongo_modules.mongo_sort.repos.VoiceRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

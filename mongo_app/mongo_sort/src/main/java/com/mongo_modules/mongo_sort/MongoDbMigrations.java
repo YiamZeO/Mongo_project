@@ -2,6 +2,7 @@ package com.mongo_modules.mongo_sort;
 
 import com.github.cloudyrock.mongock.ChangeLog;
 import com.github.cloudyrock.mongock.ChangeSet;
+import com.mongo_modules.mongo_sort.repos.VoiceRepository;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

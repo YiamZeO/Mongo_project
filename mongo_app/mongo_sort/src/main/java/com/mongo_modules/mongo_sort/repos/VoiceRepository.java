@@ -1,5 +1,6 @@
-package com.mongo_modules.mongo_sort;
+package com.mongo_modules.mongo_sort.repos;
 
+import com.mongo_modules.mongo_sort.ent.Voice;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

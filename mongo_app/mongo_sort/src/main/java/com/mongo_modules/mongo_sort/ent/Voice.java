@@ -1,4 +1,4 @@
-package com.mongo_modules.mongo_sort;
+package com.mongo_modules.mongo_sort.ent;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
