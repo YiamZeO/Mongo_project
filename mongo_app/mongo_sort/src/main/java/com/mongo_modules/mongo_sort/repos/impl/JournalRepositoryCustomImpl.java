@@ -2,6 +2,7 @@ package com.mongo_modules.mongo_sort.repos.impl;
 
 import com.mongo_modules.mongo_sort.ent.JournalRecord;
 import com.mongo_modules.mongo_sort.repos.JournalRepositoryCustom;
+
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -32,6 +33,8 @@ public class JournalRepositoryCustomImpl implements JournalRepositoryCustom {
                         Criteria.where("result").is("OK"),
                         Criteria.where("event").is("LOGIN")
                 )),
+                Aggregation.lookup("users", "user._id", "_id", "join_user"),
+                Aggregation.match(Criteria.where("join_user.0").exists(true)),
                 Aggregation.sort(Sort.Direction.DESC, "dateTime"),
                 Aggregation.group("user._id")
                         .first("$$ROOT").as("record"),
