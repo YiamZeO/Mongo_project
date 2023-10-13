@@ -23,6 +23,7 @@ public class AppStarter {
         System.out.println("Количество записей: " + records.size());
         for (JournalRecord j : records) {
             System.out.println("Пользователь " + j.getUser().getId());
+            System.out.println("Login " + j.getUser().getLogin());
             System.out.println("Дата " + j.getDateTime());
             System.out.println("////////////////////////////////////");
         }
